@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "mlops-project"
+version = "0.1.0"
+description = "\"Test mlops project\""
+authors = ["Kirill <malyushitsky@yandex.ru>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.1.3"
+numpy = "^1.26.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

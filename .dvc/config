@@ -1,0 +1,3 @@
+['remote "myremote"']
+    url = gdrive://1PSaObxIRwIeH8ZCLfDKfySPBYTx0U51k
+    gdrive_acknowledge_abuse = true

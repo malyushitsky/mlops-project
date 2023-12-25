@@ -14,7 +14,6 @@ def main():
 
     with open("models/categorical_imputer.pickle", "rb") as handle:
         imputer_cat = pickle.load(handle)
-
     with open("models/numerical_imputer.pickle", "rb") as handle:
         imputer_num = pickle.load(handle)
 

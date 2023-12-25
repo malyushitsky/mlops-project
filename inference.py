@@ -1,14 +1,20 @@
 import io
+import logging
 import os
 import pickle
 
 import dvc.api
+import hydra
 import pandas as pd
 from catboost import CatBoostClassifier
+from omegaconf import DictConfig
 from sklearn.metrics import roc_auc_score
 
+log = logging.getLogger(__name__)
 
-def main():
+
+@hydra.main(version_base=None, config_path="config", config_name="config")
+def main(cfg: DictConfig):
     url = "https://github.com/malyushitsky/mlops_prj"
     data = dvc.api.read("data/test.csv", repo=url)
     df = pd.read_csv(io.StringIO(data), sep=",")
@@ -31,7 +37,7 @@ def main():
     y = df["Survived"]
 
     roc_auc = roc_auc_score(y, model.predict_proba(X)[:, 1])
-    print(roc_auc)
+    log.info(f"Roc_auc_test: {roc_auc}")
     preds = pd.Series(model.predict(X))
 
     os.makedirs("./predictions", exist_ok=True)

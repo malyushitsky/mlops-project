@@ -1,0 +1,5 @@
+outs:
+- md5: e3b3b213069ca2e6aa7d8c4a0fff6d78
+  size: 545
+  hash: md5
+  path: categorical_imputer.pickle

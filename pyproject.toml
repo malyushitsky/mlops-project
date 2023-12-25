@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mlops-project"
+name = "mlops_project"
 version = "0.1.0"
 description = "\"Test mlops project\""
 authors = ["Kirill <malyushitsky@yandex.ru>"]

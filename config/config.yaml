@@ -1,4 +1,8 @@
 #config.yaml
+hydra:
+  run:
+    dir: ../outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
 model: catboost_classifier
 params:
   learning_rate: 0.05

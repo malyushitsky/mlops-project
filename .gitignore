@@ -5,3 +5,5 @@
 # Local directories
 outputs/
 predictions/
+mlops_project/mlruns/
+mlops_project/__pycache__/

@@ -5,6 +5,10 @@ hydra:
 
 model: catboost_classifier
 params:
+  loss_function: 'Logloss'
   learning_rate: 0.05
   n_estimators: 1000
   max_depth: 5
+  eval_metric: 'AUC'
+  custom_metric: 'AUC:hints=skip_train~false'
+  metric_period: 20

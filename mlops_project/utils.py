@@ -106,13 +106,12 @@ def calc_metrics_with_logging(model, X, y, mode):
            elif mode == 'infer' -> pd.Series (predictions)
     """
 
-    mlflow.set_tracking_uri("http://128.0.1.1:8080")
+    # mlflow.set_tracking_uri("http://128.0.1.1:8080")
     if mode == "train":
         with mlflow.start_run(run_name="TrainRun"):
             eval_metrics = model.evals_result_["learn"]
-            log.info(f"Logloss_val: {eval_metrics['Logloss']}")
-            log.info(f"Roc_auc_val: {eval_metrics['AUC']}")
-
+            auc = roc_auc_score(y, model.predict_proba(X)[:, 1])
+            log.info(f"Roc_auc_val: {auc}")
             logloss = eval_metrics["Logloss"]
             auc = eval_metrics["AUC"]
             for idx in range(len(eval_metrics["AUC"])):

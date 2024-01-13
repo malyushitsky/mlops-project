@@ -12,7 +12,7 @@ from utils import (
 
 @hydra.main(version_base=None, config_path="../config", config_name="config")
 def main(cfg: DictConfig):
-    url = "https://github.com/malyushitsky/mlops_prj"
+    url = "https://github.com/malyushitsky/mlops-project"
     file = "data/train.csv"
     df = get_data(file, url)
     df, imputer_cat, imputer_num, cat_cols = preprocess_data(df, "train")

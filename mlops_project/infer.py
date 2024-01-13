@@ -6,7 +6,7 @@ from utils import calc_metrics_with_logging, get_data, preprocess_data, save_com
 
 @hydra.main(version_base=None, config_path="../config", config_name="config")
 def main(_: DictConfig):
-    url = "https://github.com/malyushitsky/mlops_prj"
+    url = "https://github.com/malyushitsky/mlops-project"
     file = "data/test.csv"
     df = get_data(file, url)
 
